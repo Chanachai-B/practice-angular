@@ -1,0 +1,37 @@
+﻿<p-confirmdialog appendTo="body" />
+<form [formGroup]="form" class="flex flex-col gap-5 p-4">
+  <div class="flex items-center gap-4">
+    <label class="text-sm font-medium w-24 shrink-0">ชื่อ - สกุล <span class="text-red-500">*</span></label>
+    <input pInputText formControlName="name" placeholder="ชื่อ" class="flex-1" />
+    <input pInputText formControlName="lastname" placeholder="นามสกุล" class="flex-1" />
+  </div>
+
+  <div class="flex items-center gap-4">
+    <label class="text-sm font-medium w-24 shrink-0">วันเกิด <span class="text-red-500">*</span></label>
+    <p-datepicker
+      formControlName="dob"
+      [maxDate]="today"
+      dateFormat="yy-mm-dd"
+      [showIcon]="true"
+      appendTo="body"
+      class="flex-1"
+    />
+  </div>
+
+  <div class="flex items-center gap-4">
+    <label class="text-sm font-medium w-24 shrink-0">อายุ</label>
+    <span class="text-gray-700">{{ form.get('age')?.value }} ปี</span>
+  </div>
+
+  <div class="flex items-start gap-4">
+    <label class="text-sm font-medium w-24 shrink-0 mt-2">ที่อยู่</label>
+    <textarea pTextarea formControlName="address" rows="4" class="flex-1 resize-none"></textarea>
+  </div>
+
+  <div class="flex justify-end gap-2 pt-2">
+    @if (isCreateMode) {
+      <p-button label="บันทึก" (onClick)="save()" [disabled]="form.invalid" />
+    }
+    <p-button label="ปิด" severity="danger" (onClick)="close()" />
+  </div>
+</form>

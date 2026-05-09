@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.log
+
+# Secrets / Config
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+*.pfx
+.env
+
+# Angular / Node
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.angular/
+
+# IDE
+.vscode/*
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini

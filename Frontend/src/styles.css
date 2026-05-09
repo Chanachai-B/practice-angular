@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded font-medium transition-colors cursor-pointer;
+    }
+
+    .btn-blue {
+        @apply bg-blue-600 text-white hover:bg-blue-700;
+    }
+
+    .btn-red {
+        @apply bg-red-500 text-white hover:bg-red-600;
+    }
+}
