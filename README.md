@@ -36,7 +36,6 @@
 
 ```bash
 git clone <repo-url>
-cd practice
 ```
 
 ### 2. รัน Database
@@ -48,9 +47,12 @@ docker compose up -d
 ### 3. รัน Backend
 
 ```bash
+dotnet restore
 cd API
 dotnet run
 ```
+
+> `dotnet restore` ต้องการอินเทอร์เน็ตเพื่อดาวน์โหลด NuGet packages ครั้งแรก หลังจากนั้นจะใช้ cache แทน
 
 API จะรันที่ `http://localhost:5047`
 Swagger UI: `http://localhost:5047/swagger`

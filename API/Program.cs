@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("Default"),
+        npgsql => npgsql.MigrationsAssembly("Infrastructure")));
 
 builder.Services.AddScoped<IDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
